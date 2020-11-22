@@ -19,7 +19,10 @@
                 @Html.DisplayNameFor(model => model.GroupID)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateAdded)
+                @Html.DisplayNameFor(model => model.DateCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateEdited)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.EventDate)
@@ -37,7 +40,10 @@
                 @Html.DisplayFor(modelItem => item.GroupID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DateAdded)
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateEdited)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.EventDate)

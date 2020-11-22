@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using web.Data;
 using web.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace web.Controllers
 {
@@ -56,7 +57,8 @@ namespace web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,GroupID,DateAdded,EventDate")] Event @event)
+        [Authorize]
+        public async Task<IActionResult> Create([Bind("ID,Name,GroupID,DateCreated,DateEdited,EventDate")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +90,8 @@ namespace web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,GroupID,DateAdded,EventDate")] Event @event)
+        [Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,GroupID,DateCreated,DateEdited,EventDate")] Event @event)
         {
             if (id != @event.ID)
             {
@@ -139,6 +142,7 @@ namespace web.Controllers
         // POST: Events/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Staff")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var @event = await _context.Message.FindAsync(id);

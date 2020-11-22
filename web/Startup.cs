@@ -12,6 +12,7 @@ using web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using web.Models;
+using Microsoft.AspNetCore.Authentication;
 
 namespace web
 {
@@ -28,9 +29,16 @@ namespace web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+
             services.AddDbContext<CloudContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("CloudReminder")));
-            services.AddIdentity<User, IdentityRole>(options => options.Stores.MaxLengthForKeys = 128).AddEntityFrameworkStores<CloudContext>().AddDefaultUI().AddDefaultTokenProviders();
+            
+            services.AddIdentity<User, IdentityRole>(options =>
+            options.Stores.MaxLengthForKeys = 128)
+            .AddEntityFrameworkStores<CloudContext>()
+            .AddDefaultUI()
+            .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,8 +59,9 @@ namespace web
 
             app.UseRouting();
 
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
+            
 
             app.UseEndpoints(endpoints =>
             {
@@ -61,6 +70,9 @@ namespace web
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
+            
         }
+
     }
 }
