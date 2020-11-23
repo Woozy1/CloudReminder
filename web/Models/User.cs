@@ -8,6 +8,7 @@ namespace web.Models
     {
         public string LastName { get; set; }
         public string FirstName { get; set; }
+        public ICollection<GroupUser>? GroupUsers { get; set; }
         public DateTime Date { get; set; }
     }
 }

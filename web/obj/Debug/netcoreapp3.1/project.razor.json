@@ -14397,6 +14397,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\Views\\Groups\\Delete.cshtml",
+      "TargetPath": "Views\\Groups\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\Views\\Events\\Index.cshtml",
       "TargetPath": "Views\\Events\\Index.cshtml",
       "FileKind": "mvc"
@@ -14422,6 +14427,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\Views\\Groups\\Create.cshtml",
+      "TargetPath": "Views\\Groups\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
       "FileKind": "mvc"
@@ -14442,6 +14452,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\Views\\Groups\\Edit.cshtml",
+      "TargetPath": "Views\\Groups\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
@@ -14449,6 +14464,11 @@
     {
       "FilePath": "c:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\Views\\Groups\\Index.cshtml",
+      "TargetPath": "Views\\Groups\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14464,6 +14484,11 @@
     {
       "FilePath": "c:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\Views\\Groups\\Details.cshtml",
+      "TargetPath": "Views\\Groups\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14484,6 +14509,11 @@
     {
       "FilePath": "c:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\Views\\Groups\\Join.cshtml",
+      "TargetPath": "Views\\Groups\\Join.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -12,25 +12,25 @@ using Microsoft.AspNetCore.Identity;
 
 namespace web.Controllers
 {
-    public class EventsController : Controller
+    public class GroupsController : Controller
     {
         private readonly CloudContext _context;
-
         private readonly UserManager<User> _usermanager;
 
-        public EventsController(CloudContext context, UserManager<User> userManager)
+
+        public GroupsController(CloudContext context, UserManager<User> userManager)
         {
             _context = context;
             _usermanager = userManager;
         }
 
-        // GET: Events
+        // GET: Groups
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Events.ToListAsync());
+            return View(await _context.Groups.ToListAsync());
         }
 
-        // GET: Events/Details/5
+        // GET: Groups/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -38,45 +38,39 @@ namespace web.Controllers
                 return NotFound();
             }
 
-            var @event = await _context.Events
+            var @group = await _context.Groups
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (@event == null)
+            if (@group == null)
             {
                 return NotFound();
             }
 
-            return View(@event);
+            return View(@group);
         }
 
-        // GET: Events/Create
-        [Authorize(Roles = "Administrator")]
+        // GET: Groups/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Events/Create
+        // POST: Groups/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        
-        public async Task<IActionResult> Create([Bind("ID,Name,DateCreated,EventDate")] Event @event)
+        public async Task<IActionResult> Create([Bind("ID,Name")] Group @group)
         {
-            var currentUser = await _usermanager.GetUserAsync(User);
-
             if (ModelState.IsValid)
             {
-                @event.DateCreated = DateTime.Now; 
-                @event.Owner = currentUser;
-                _context.Add(@event);
+                _context.Add(@group);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(@event);
+            return View(@group);
         }
 
-        // GET: Events/Edit/5
+        // GET: Groups/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -84,22 +78,22 @@ namespace web.Controllers
                 return NotFound();
             }
 
-            var @event = await _context.Events.FindAsync(id);
-            if (@event == null)
+            var @group = await _context.Groups.FindAsync(id);
+            if (@group == null)
             {
                 return NotFound();
             }
-            return View(@event);
+            return View(@group);
         }
 
-        // POST: Events/Edit/5
+        // POST: Groups/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,DateCreated,EventDate")] Event @event)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name")] Group @group)
         {
-            if (id != @event.ID)
+            if (id != @group.ID)
             {
                 return NotFound();
             }
@@ -108,12 +102,12 @@ namespace web.Controllers
             {
                 try
                 {
-                    _context.Update(@event);
+                    _context.Update(@group);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EventExists(@event.ID))
+                    if (!GroupExists(@group.ID))
                     {
                         return NotFound();
                     }
@@ -124,10 +118,10 @@ namespace web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(@event);
+            return View(@group);
         }
 
-        // GET: Events/Delete/5
+        // GET: Groups/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -135,31 +129,67 @@ namespace web.Controllers
                 return NotFound();
             }
 
-            var @event = await _context.Events
+            var @group = await _context.Groups
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (@event == null)
+            if (@group == null)
             {
                 return NotFound();
             }
 
-            return View(@event);
+            return View(@group);
         }
 
-        // POST: Events/Delete/5
+        // POST: Groups/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Staff")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var @event = await _context.Events.FindAsync(id);
-            _context.Events.Remove(@event);
+            var @group = await _context.Groups.FindAsync(id);
+            _context.Groups.Remove(@group);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EventExists(int id)
+        public async Task<IActionResult> Join(int? id)
         {
-            return _context.Events.Any(e => e.ID == id);
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var @group = await _context.Groups
+                .FirstOrDefaultAsync(m => m.ID == id);
+            if (@group == null)
+            {
+                return NotFound();
+            }
+
+            return View(@group);
+        }
+
+        // POST: Groups/Join/5
+        [HttpPost, ActionName("Join")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> JoinConfirmed(int id)
+        {
+            var @group = await _context.Groups.FindAsync(id);
+            var currentUser = await _usermanager.GetUserAsync(User);
+
+            var groupUser = new GroupUser
+            {
+                UserId = currentUser.Id,
+                Group = @group,
+                GroupId = @group.ID,
+                User = currentUser 
+            };
+            _context.GroupUsers.Add(groupUser);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool GroupExists(int id)
+        {
+            return _context.Groups.Any(e => e.ID == id);
         }
     }
 }

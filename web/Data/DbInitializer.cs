@@ -86,6 +86,7 @@ namespace web.Data
                 context.UserRoles.Add(r);
             }
 
+            context.SaveChanges();
 
         }
     }

@@ -8,7 +8,7 @@ namespace web.Models
         public int ID { get; set; }
         public string Text { get; set; }
         public User? Owner { get; set; }
-        public Group? GroupID { get; set; }
-        public DateTime Date { get; set; }
+        public Group? Group { get; set; }
+        public DateTime DateCreated { get; set; }
     }
 }

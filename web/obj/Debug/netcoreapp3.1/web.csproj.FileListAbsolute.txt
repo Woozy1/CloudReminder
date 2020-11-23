@@ -327,3 +327,9 @@ C:\Users\grilj\OneDrive\Desktop\FRI\IS\CloudReminder\web\obj\Debug\netcoreapp3.1
 C:\Users\grilj\OneDrive\Desktop\FRI\IS\CloudReminder\web\obj\Debug\netcoreapp3.1\Razor\Views\Events\Details.cshtml.g.cs
 C:\Users\grilj\OneDrive\Desktop\FRI\IS\CloudReminder\web\obj\Debug\netcoreapp3.1\Razor\Views\Events\Edit.cshtml.g.cs
 C:\Users\grilj\OneDrive\Desktop\FRI\IS\CloudReminder\web\obj\Debug\netcoreapp3.1\Razor\Views\Events\Index.cshtml.g.cs
+C:\Users\grilj\OneDrive\Desktop\FRI\IS\CloudReminder\web\obj\Debug\netcoreapp3.1\Razor\Views\Groups\Create.cshtml.g.cs
+C:\Users\grilj\OneDrive\Desktop\FRI\IS\CloudReminder\web\obj\Debug\netcoreapp3.1\Razor\Views\Groups\Delete.cshtml.g.cs
+C:\Users\grilj\OneDrive\Desktop\FRI\IS\CloudReminder\web\obj\Debug\netcoreapp3.1\Razor\Views\Groups\Details.cshtml.g.cs
+C:\Users\grilj\OneDrive\Desktop\FRI\IS\CloudReminder\web\obj\Debug\netcoreapp3.1\Razor\Views\Groups\Edit.cshtml.g.cs
+C:\Users\grilj\OneDrive\Desktop\FRI\IS\CloudReminder\web\obj\Debug\netcoreapp3.1\Razor\Views\Groups\Index.cshtml.g.cs
+C:\Users\grilj\OneDrive\Desktop\FRI\IS\CloudReminder\web\obj\Debug\netcoreapp3.1\Razor\Views\Groups\Join.cshtml.g.cs
