@@ -7,7 +7,7 @@ namespace web.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public int GroupID { get; set; }
+        public Group? GroupID { get; set; }
         public DateTime? DateCreated { get; set; }
         public DateTime? DateEdited { get; set; }
         public DateTime EventDate { get; set; }

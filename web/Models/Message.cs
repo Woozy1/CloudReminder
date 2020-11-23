@@ -7,8 +7,8 @@ namespace web.Models
     {
         public int ID { get; set; }
         public string Text { get; set; }
-        public string UserID { get; set; }
-        public int GroupID { get; set; }
+        public User? Owner { get; set; }
+        public Group? GroupID { get; set; }
         public DateTime Date { get; set; }
     }
 }
