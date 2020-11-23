@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace web.Controllers
 {
+    [Authorize]
     public class EventsController : Controller
     {
         private readonly CloudContext _context;
@@ -148,7 +149,6 @@ namespace web.Controllers
         // POST: Events/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Staff")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var @event = await _context.Events.FindAsync(id);

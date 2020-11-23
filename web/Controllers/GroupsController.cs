@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace web.Controllers
 {
+    [Authorize]
     public class GroupsController : Controller
     {
         private readonly CloudContext _context;
