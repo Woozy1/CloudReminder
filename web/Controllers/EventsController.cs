@@ -70,6 +70,7 @@ namespace web.Controllers
             {
                 @event.DateCreated = DateTime.Now; 
                 @event.Owner = currentUser;
+                
                 _context.Add(@event);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

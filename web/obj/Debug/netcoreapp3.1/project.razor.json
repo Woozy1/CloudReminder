@@ -14402,6 +14402,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\Views\\Groups\\Leave.cshtml",
+      "TargetPath": "Views\\Groups\\Leave.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\Views\\Events\\Index.cshtml",
       "TargetPath": "Views\\Events\\Index.cshtml",
       "FileKind": "mvc"

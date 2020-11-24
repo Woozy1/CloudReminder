@@ -16,7 +16,6 @@ namespace web.Data
         public DbSet<Group> Groups { get; set; }
         public DbSet<Ringtone> Ringtones { get; set; }  
         public DbSet<GroupUser> GroupUsers { get; set; }  
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

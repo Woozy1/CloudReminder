@@ -333,3 +333,4 @@ C:\Users\grilj\OneDrive\Desktop\FRI\IS\CloudReminder\web\obj\Debug\netcoreapp3.1
 C:\Users\grilj\OneDrive\Desktop\FRI\IS\CloudReminder\web\obj\Debug\netcoreapp3.1\Razor\Views\Groups\Edit.cshtml.g.cs
 C:\Users\grilj\OneDrive\Desktop\FRI\IS\CloudReminder\web\obj\Debug\netcoreapp3.1\Razor\Views\Groups\Index.cshtml.g.cs
 C:\Users\grilj\OneDrive\Desktop\FRI\IS\CloudReminder\web\obj\Debug\netcoreapp3.1\Razor\Views\Groups\Join.cshtml.g.cs
+C:\Users\grilj\OneDrive\Desktop\FRI\IS\CloudReminder\web\obj\Debug\netcoreapp3.1\Razor\Views\Groups\Leave.cshtml.g.cs

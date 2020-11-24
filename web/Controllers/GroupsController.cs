@@ -183,7 +183,70 @@ namespace web.Controllers
                 GroupId = @group.ID,
                 User = currentUser 
             };
-            _context.GroupUsers.Add(groupUser);
+            
+
+            Boolean notInside = true;
+            foreach (var item in _context.GroupUsers)
+            {
+                if(item.UserId == groupUser.UserId && item.GroupId == groupUser.GroupId)
+                    notInside = false;
+            }
+            if(notInside){
+                var role = new IdentityRole{Id = (@group.ID + 30).ToString() ,Name=@group.Name};
+                _context.Roles.Add(role);
+
+                var UserRole = new IdentityUserRole<string>{RoleId = (@group.ID + 30).ToString(), UserId=currentUser.Id};
+        
+                _context.UserRoles.Add(UserRole);
+                _context.GroupUsers.Add(groupUser);
+            }
+                
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Leave(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var @group = await _context.Groups
+                .FirstOrDefaultAsync(m => m.ID == id);
+            if (@group == null)
+            {
+                return NotFound();
+            }
+
+            return View(@group);
+        }
+
+        // POST: Groups/Delete/5
+        [HttpPost, ActionName("Leave")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> LeaveConfirmed(int id)
+        {
+            var @group = await _context.Groups.FindAsync(id);
+            var currentUser = await _usermanager.GetUserAsync(User);
+
+            var groupUser = new GroupUser
+            {
+                UserId = currentUser.Id,
+                Group = @group,
+                GroupId = @group.ID,
+                User = currentUser 
+            };
+            Boolean Inside = false;
+            foreach (var item in _context.GroupUsers)
+            {
+                if(item.UserId == groupUser.UserId && item.GroupId == groupUser.GroupId)
+                    Inside = true;
+            }
+            if(Inside){
+                _context.GroupUsers.Remove(groupUser);
+            }
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

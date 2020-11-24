@@ -29,7 +29,7 @@ namespace web.Data
 
             var Groups = new Group[]
             {
-            new Group{Name="Chemistry"},
+            new Group{Name="movies"},
             };
             foreach (Group c in Groups)
             {
