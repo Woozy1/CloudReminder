@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\web.csproj": {}
+    "C:\\Users\\mihac\\OneDrive\\Namizje\\IS vaje\\CloudReminder\\web\\web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\web.csproj": {
+    "C:\\Users\\mihac\\OneDrive\\Namizje\\IS vaje\\CloudReminder\\web\\web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\web.csproj",
+        "projectUniqueName": "C:\\Users\\mihac\\OneDrive\\Namizje\\IS vaje\\CloudReminder\\web\\web.csproj",
         "projectName": "web",
-        "projectPath": "C:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\web.csproj",
-        "packagesPath": "C:\\Users\\grilj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\grilj\\OneDrive\\Desktop\\FRI\\IS\\CloudReminder\\web\\obj\\",
+        "projectPath": "C:\\Users\\mihac\\OneDrive\\Namizje\\IS vaje\\CloudReminder\\web\\web.csproj",
+        "packagesPath": "C:\\Users\\mihac\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mihac\\OneDrive\\Namizje\\IS vaje\\CloudReminder\\web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\grilj\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\mihac\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
