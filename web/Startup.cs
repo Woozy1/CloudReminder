@@ -32,7 +32,7 @@ namespace web
 
 
             services.AddDbContext<CloudContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("Azure")));
+                options.UseSqlServer(Configuration.GetConnectionString("AzureContext")));
             
             services.AddIdentity<User, IdentityRole>(options =>
             options.Stores.MaxLengthForKeys = 128)
